@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModel="clr-namespace:MauiDolgozat.ViewModels"
+             xmlns:models="clr-namespace:MauiDolgozat.Common"
+             x:Class="MauiDolgozat.Views.AddPage"
+             x:DataType="viewModel:AddViewModel"
+             Title="AddPage">
+    
+    <VerticalStackLayout WidthRequest="300">
+        <Label Text="Adja meg a nevet: "/>
+        <Entry Text="{Binding Name}" />
+
+        <Label Text="Válasszon nemet: "/>
+        <Picker ItemsSource="{Binding Genders}" SelectedItem="{Binding SelectedGender, Mode=TwoWay}"/>
+
+        <Label Text="Adja meg a magasságot: "/>
+        <Entry Text="{Binding Height}" />
+
+        <Label Text="Adja meg a súlyt: "/>
+        <Entry Text="{Binding Weight}" />
+
+        <Label Text="Adja meg az osztályt: "/>
+        <Entry Text="{Binding ClassName}" />
+
+        <Button  Text="Hozzáadás" Command="{Binding AddStudentCommand}" Background="Green"/>
+
+    </VerticalStackLayout>
+</ContentPage>

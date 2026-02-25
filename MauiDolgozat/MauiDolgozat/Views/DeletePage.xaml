@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModel="clr-namespace:MauiDolgozat.ViewModels"
+             xmlns:models="clr-namespace:MauiDolgozat.Common"
+             x:Class="MauiDolgozat.Views.DeletePage"
+             x:DataType="viewModel:DeleteViewModel"
+             Title="DeletePage">
+    
+    <VerticalStackLayout WidthRequest="300">
+        <Label Text="Válasszon tanulót: "/>
+        <Picker ItemsSource="{Binding Students}" ItemDisplayBinding="{Binding Name}" SelectedItem="{Binding SelectedStudent, Mode=TwoWay}"/>
+
+        <Button Command="{Binding DeletStudentCommand}" Text="Törlés" BackgroundColor="Red" />
+    </VerticalStackLayout>
+</ContentPage>

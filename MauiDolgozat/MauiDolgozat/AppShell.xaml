@@ -11,4 +11,27 @@
         ContentTemplate="{DataTemplate local:MainPage}"
         Route="MainPage" />
 
+    <ShellContent
+         Title="Add Student"
+         ContentTemplate="{DataTemplate local:AddPage}"
+         Route="AddPage" />
+
+    <ShellContent
+         Title="Delete Student"
+         ContentTemplate="{DataTemplate local:DeletePage}"
+         Route="DeletePage" />
+    
+    <ShellContent
+         Title="Update Student"
+         ContentTemplate="{DataTemplate local:UpdatePage}"
+         Route="UpdatePage" />
+
+    <ShellContent
+         Title="Reports"
+         ContentTemplate="{DataTemplate local:ReportPage}"
+         Route="ReportPage" />
+
+
+
+
 </Shell>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                xmlns:viewModel="clr-namespace:MauiDolgozat.ViewModels"
+                xmlns:models="clr-namespace:MauiDolgozat.Common"
+             x:Class="MauiDolgozat.Views.ReportPage"
+             x:DataType="viewModel:ReportViewModel"
+             Title="ReportPage">
+    <VerticalStackLayout HorizontalOptions="Center" WidthRequest="500">
+        <Label Text="{Binding AvaragesOut}" Margin="5"/>
+
+        <HorizontalStackLayout>
+            <Label Text="Legmagasabb lány: " Margin="5"/>
+        <Label Text="{Binding TallestGirl.Name}" />
+        <Label Text="{Binding TallestGirl.Height, StringFormat='{0} cm'}" />
+        </HorizontalStackLayout>
+
+        <HorizontalStackLayout>
+            <Label Text="legsúlyosabb fiu: " Margin="5"/>
+            <Label Text="{Binding HeviestBoy.Name}" />
+            <Label Text="{Binding HeviestBoy.Weight, StringFormat='{0} kg'}" />
+        </HorizontalStackLayout>
+
+
+    </VerticalStackLayout>
+</ContentPage>

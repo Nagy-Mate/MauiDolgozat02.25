@@ -6,7 +6,11 @@ namespace MauiDolgozat
     {
         public AppShell()
         {
-            Routing.RegisterRoute("MainPage", typeof(MainPage));
+            Routing.RegisterRoute("AddPage", typeof(AddPage));
+            Routing.RegisterRoute("DeletePage", typeof(DeletePage));
+            Routing.RegisterRoute("UpdatePage", typeof(UpdatePage));
+            Routing.RegisterRoute("ReportPage", typeof(ReportPage));
+
             InitializeComponent();
         }
     }

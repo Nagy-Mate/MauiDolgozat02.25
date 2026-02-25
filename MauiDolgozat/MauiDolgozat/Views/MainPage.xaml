@@ -2,19 +2,34 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:viewModel="clr-namespace:MauiDolgozat.ViewModels"
-             xmlns:models="clr-namespace:System.Data.Common;assembly=netstandard"
+             xmlns:models="clr-namespace:MauiDolgozat.Common"
              x:DataType="viewModel:MainPageViewModel"
              x:Class="MauiDolgozat.Views.MainPage">
+    <ScrollView>
+         <VerticalStackLayout>
+        <HorizontalStackLayout Padding="10" Spacing="10" WidthRequest="500">
+
+        <Label Text="Név" FontSize="18" FontAttributes="Bold" WidthRequest="100" TextColor="Black" />
+        <Label Text="Nem" FontSize="18" WidthRequest="100" TextColor="Black"/>
+
+        <Label Text="Magasság" WidthRequest="100" TextColor="Black"/>
+        <Label Text="Súly" WidthRequest="100" TextColor="Black"/>
+        <Label Text="Osztály" FontSize="18"  WidthRequest="100"  TextColor="Black"/>
 
 
-    <CollectionView ItemsSource="{Binding}" HorizontalOptions="Center" MaximumWidthRequest="400">
+    </HorizontalStackLayout>
+
+    <CollectionView ItemsSource="{Binding Students}" HorizontalOptions="Center" WidthRequest="500">
         <CollectionView.ItemTemplate>
-            <DataTemplate x:DataType="x:String">
+            <DataTemplate x:DataType="models:Student">
                 <HorizontalStackLayout Padding="10" Spacing="10">
-                    <Label Text="{Binding .}" FontSize="18" FontAttributes="Bold" />
+                    
+                    <Label Text="{Binding Name}" FontSize="18" FontAttributes="Bold" WidthRequest="100" TextColor="Black" />
+                    <Label Text="{Binding Gender}" FontSize="18" WidthRequest="100" TextColor="Black"/>
 
-                    <!--Label Text="{Binding, StringFormat='{0:C}'}" TextColor="Green"/>
-                    <Label Text="{Binding , StringFormat='Készlet: {0} db'}" TextColor="Blue"/-->
+                    <Label Text="{Binding Height, StringFormat='{0} cm'}" WidthRequest="100" TextColor="Black"/>
+                    <Label Text="{Binding Weight, StringFormat='{0} kg'}" WidthRequest="100" TextColor="Black"/>
+                    <Label Text="{Binding Class}" FontSize="18"  WidthRequest="100"  TextColor="Black"/>
 
 
                 </HorizontalStackLayout>
@@ -22,6 +37,11 @@
 
         </CollectionView.ItemTemplate>
     </CollectionView>
+    </VerticalStackLayout>
+
+    </ScrollView>
+   
+    
 
 
 </ContentPage>
