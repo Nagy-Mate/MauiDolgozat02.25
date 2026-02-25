@@ -47,7 +47,7 @@ public partial class ReportViewModel : ObservableObject
         AvaragesOut = "osztály, átlag magasság, átlag súly\n";
         foreach (var item in grouped)
         {
-            AvaragesOut += $"{item.First().Class} ,\t{Math.Round(item.Average(c => c.Height))},\t\t {Math.Round(item.Average(c => c.Weight))} \n" ;
+            AvaragesOut += $"{item.First().Class} \t{Math.Round(item.Average(c => c.Height))}\t\t {Math.Round(item.Average(c => c.Weight))} \n" ;
         }
     }
 
